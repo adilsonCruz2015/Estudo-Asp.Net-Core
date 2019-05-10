@@ -1,0 +1,9 @@
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\bin\Debug\netcoreapp2.2\ADC_Library.deps.json
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\bin\Debug\netcoreapp2.2\ADC_Library.dll
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\bin\Debug\netcoreapp2.2\ADC_Library.pdb
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\obj\Debug\netcoreapp2.2\ADC_Library.csprojAssemblyReference.cache
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\obj\Debug\netcoreapp2.2\ADC_Library.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\obj\Debug\netcoreapp2.2\ADC_Library.AssemblyInfoInputs.cache
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\obj\Debug\netcoreapp2.2\ADC_Library.AssemblyInfo.cs
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\obj\Debug\netcoreapp2.2\ADC_Library.dll
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Library\obj\Debug\netcoreapp2.2\ADC_Library.pdb
