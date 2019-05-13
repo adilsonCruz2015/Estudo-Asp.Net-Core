@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="Domain\Validation\Movie\Extensions\" />
+    <Folder Include="Domain\Validation\CarValidator\" />
   </ItemGroup>
 
 </Project>

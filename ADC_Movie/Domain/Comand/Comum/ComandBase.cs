@@ -9,7 +9,7 @@ namespace ADC_Movie.Domain.Comand.Comum
 
         public bool Invalid => !Valid;
 
-        public virtual ValidationResult ValidationResult { get; private set; }
+        public virtual ValidationResult ValidationResult { get; protected set; }
 
         public bool Validate<TModel>(TModel model, AbstractValidator<TModel> validator)
         {

@@ -1,6 +1,7 @@
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Movie\bin\Debug\netcoreapp2.2\ADC_Movie.deps.json
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Movie\bin\Debug\netcoreapp2.2\ADC_Movie.dll
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Movie\bin\Debug\netcoreapp2.2\ADC_Movie.pdb
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Movie\obj\Debug\netcoreapp2.2\ADC_Movie.csprojAssemblyReference.cache
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Movie\obj\Debug\netcoreapp2.2\ADC_Movie.csproj.CoreCompileInputs.cache
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Movie\obj\Debug\netcoreapp2.2\ADC_Movie.AssemblyInfoInputs.cache
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Movie\obj\Debug\netcoreapp2.2\ADC_Movie.AssemblyInfo.cs

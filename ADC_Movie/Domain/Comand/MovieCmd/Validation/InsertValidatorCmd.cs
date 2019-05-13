@@ -45,7 +45,7 @@ namespace ADC_Movie.Domain.Comand.MovieCmd.Validation
                 .MinimumLength(5)
                 .WithMessage("{PropertyName} deve ter no minimo 5 caracteres")
                 .Equal(s => s.ConfirmaSenha)
-                .WithMessage("O valor do campo: {PropertyName} deve ser igual a {PropertyValue}"); ;
+                .WithMessage("O valor do campo: {PropertyName} deve ser igual a {PropertyValue}");
         }
     }
 
@@ -61,10 +61,12 @@ namespace ADC_Movie.Domain.Comand.MovieCmd.Validation
             .WithMessage("{PropertyName} não é válido");
         }
 
-
         private static bool Check(object value)
         {
             string input = Convert.ToString(value);
+
+            if (string.IsNullOrEmpty(input))
+                return true;
 
             Boolean retorno;
             string pattern;

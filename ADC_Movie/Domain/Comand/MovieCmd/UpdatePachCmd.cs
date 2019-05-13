@@ -1,4 +1,5 @@
-﻿using ADC_Movie.Domain.Comand.MovieCmd.Validation;
+﻿
+using ADC_Movie.Domain.Comand.MovieCmd.Validation;
 using ADC_Movie.Domain.Entity;
 using ADC_Movie.Domain.Validation.Interface;
 using System;
@@ -6,9 +7,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ADC_Movie.Domain.Comand.MovieCmd
 {
-    public class InsertCmd : IValidatorBase
+    public class UpdatePachCmd : IValidatorBase
     {
-        public InsertCmd() { }
+        public UpdatePachCmd() { }
+
+        [Display(Name ="Movie")]
+        public Guid Id { get; set; }
 
         [Display(Name = "Título")]
         public string Title { get; set; }
@@ -17,7 +21,7 @@ namespace ADC_Movie.Domain.Comand.MovieCmd
         public string Genre { get; set; }
 
         [Display(Name = "Data Liberação")]
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
 
         public string Cpf { get; set; }
 
@@ -31,17 +35,28 @@ namespace ADC_Movie.Domain.Comand.MovieCmd
 
         public void Aplicar(ref Movie movie)
         {
-            movie = new Movie(Title, 
-                              Genre, 
-                              ReleaseDate, 
-                              Cpf, 
-                              new Address(Rua), 
-                              Senha);
+            if (!string.IsNullOrEmpty(Title))
+                movie.Title = Title;
+
+            if (!string.IsNullOrEmpty(Genre))
+                movie.Genre = Genre;
+
+            if (!Equals(ReleaseDate, null))
+                movie.ReleaseDate = ReleaseDate.Value;
+
+            if (!string.IsNullOrEmpty(Cpf))
+                movie.Cpf = Cpf;
+
+            if (!string.IsNullOrEmpty(Rua))
+                movie.Address.Rua = Rua;
+
+            if (!string.IsNullOrEmpty(Senha))
+                movie.Senha = Senha;
         }
 
-        public bool IsValid()
+        public virtual bool IsValid()
         {
-            var validator = new InsertValidatorCmd();
+            var validator = new UpdatePachValidatorCmd();
             this.ValidationResult = validator.Validate(this);
             return this.ValidationResult.IsValid;
         }

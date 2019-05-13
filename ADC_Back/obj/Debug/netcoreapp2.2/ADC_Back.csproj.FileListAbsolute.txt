@@ -1,6 +1,7 @@
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Back\bin\Debug\netcoreapp2.2\ADC_Back.deps.json
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Back\bin\Debug\netcoreapp2.2\ADC_Back.dll
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Back\bin\Debug\netcoreapp2.2\ADC_Back.pdb
+D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Back\obj\Debug\netcoreapp2.2\ADC_Back.csprojAssemblyReference.cache
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Back\obj\Debug\netcoreapp2.2\ADC_Back.csproj.CoreCompileInputs.cache
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Back\obj\Debug\netcoreapp2.2\ADC_Back.AssemblyInfoInputs.cache
 D:\Desenvolvimento\AspNetCore\AspNetCoreWebAPI\ADC_Back\obj\Debug\netcoreapp2.2\ADC_Back.AssemblyInfo.cs

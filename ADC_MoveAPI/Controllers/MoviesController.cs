@@ -9,6 +9,7 @@ using ADC_Movie.Domain.Entity;
 using ADC_Back.Validation;
 using ADC_Movie.Domain.Comand.MovieCmd;
 using ADC_Movie.Domain.Desvincular.Movie;
+using ADC_Movie.Domain.Comand.MovieCmd.MovieCmd;
 
 namespace ADC_MoveAPI.Controllers
 {
@@ -51,18 +52,27 @@ namespace ADC_MoveAPI.Controllers
 
         // PUT: api/Movies/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMovie(Guid id, Movie movie)
+        public async Task<IActionResult> PutMovie(Guid id, UpdateCmd comando)
         {
-            if (id != movie.Id)
+            if (id != comando.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(movie).State = EntityState.Modified;
+            //_context.Entry(movie).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                this._notificationContext.Clear();
+
+                if(!comando.IsValid())
+                {
+                    this._notificationContext.AddNotifications(comando.ValidationResult);
+                    return CreatedAtAction("GetMovie", comando);
+                }
+
+                
+                //await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -84,15 +94,17 @@ namespace ADC_MoveAPI.Controllers
         public async Task<ActionResult<Movie>> PostMovie(InsertCmd comando)
         {
             this._notificationContext.Clear();
-            if(comando.EhValido())
+            if(!comando.IsValid())
             {
                 this._notificationContext.AddNotifications(comando.ValidationResult);
                 return CreatedAtAction("GetMovie", comando);
             }
+
             Movie movie = null;
             comando.Aplicar(ref movie);
             _context.Address.Add(movie.Address);
             _context.Movie.Add(movie);
+
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetMovie", new { id = movie.Id },_movieDesv.Completo(movie));
         }
@@ -116,6 +128,28 @@ namespace ADC_MoveAPI.Controllers
         private bool MovieExists(Guid id)
         {
             return _context.Movie.Any(e => e.Id == id);
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> PatchMovie(UpdatePachCmd comando)
+        {
+
+            try
+            {
+                this._notificationContext.Clear();
+                if(!comando.IsValid())
+                {
+                    this._notificationContext.AddNotifications(comando.ValidationResult);
+                    return CreatedAtAction("GetMovie", comando);
+                }
+
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+
+            }
+
+            return NoContent();
         }
     }
 }
